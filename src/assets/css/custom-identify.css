@@ -1,0 +1,31 @@
+.liquid-glass-card {
+  position: relative;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.10); /* leve, elegante */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .25s ease;
+}
+
+/* Glow interno */
+.liquid-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 12px -2px rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+/* Distortion layer (se usar filtro SVG) */
+.liquid-glass-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  filter: url(#glass-distortion);
+  -webkit-filter: url(#glass-distortion);
+  pointer-events: none;
+}

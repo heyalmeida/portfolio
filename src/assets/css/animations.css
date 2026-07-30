@@ -1,0 +1,126 @@
+html, body, * {
+  cursor: none !important;
+}
+/* Cursor base — bolinha maior */
+#cursor {
+  position: fixed;
+  top: -12px;   /* escondido real */
+  left: -12px;  /* escondido real */
+  width: 16px;
+  height: 16px;
+  background: #0011ff;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: 0.5s width height background border-radius opacity;
+  z-index: 99999;
+  will-change: transform;
+}
+
+
+/* Hover em botões / links → bolinha maior */
+#cursor.cursor--hover {
+  width: 22px;    /* antes 24px */
+  height: 22px;   /* antes 24px */
+  background: black;
+}
+
+/* Títulos → barrinha maior */
+#cursor.cursor--title {
+  width: 4px;     /* antes 3px */
+  height: 32px;   /* antes 22px */
+  background: #2563eb;
+  border-radius: 2px;
+}
+
+/* Textos → barrinha menor, mas ainda maior que antes */
+#cursor.cursor--text {
+  width: 3px;     /* antes 2px */
+  height: 20px;   /* antes 14px */
+  background: #2563eb;
+  border-radius: 2px;
+}
+
+/* Quando some */
+#cursor.cursor--hidden {
+  opacity: 0;
+}
+
+/* Efeito de flutuação */
+.floating-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+.image {
+  transform: scale(1);
+  transition: 0.32s ease-out;
+}
+
+.image:hover {
+  transform: scale(1.2);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.border-button {
+  position: relative;
+  background: none;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  color: black;
+  overflow: hidden;
+}
+
+.border-button-no-padding {
+  position: relative;
+  background: none;
+  padding-bottom: 3px;
+  border: none;
+  cursor: pointer;
+  color: black;
+  overflow: hidden;
+}
+
+.border-button-no-padding::after {
+  margin-top: 3px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  border-radius: 30px;
+  background: #4f39f6;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.border-button-no-padding:hover::after {
+  width: 110%;
+}
+
+.border-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  border-radius: 30px;
+  background: #4f39f6;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.border-button:hover::after {
+  width: 80%;
+}

@@ -1,0 +1,47 @@
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  scrollbar-width: thin; /* apenas uma scrollbar vertical fina no Firefox */
+}
+
+html {
+  overflow-y: auto; /* garante apenas UMA scrollbar vertical no html */
+}
+
+body {
+  overflow-y: visible; /* body herda do html, sem criar segunda scrollbar */
+}
+
+/* Configuração inicial */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px); /* Ajuste a posição inicial */
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.8s ease-out;
+  position: relative; /* Evita que afete o layout antes de aparecer */
+}
+
+/* Variações de entrada */
+.fade-in.from-left {
+  transform: translateY(50px); /* usa translateY para não causar scrollbar horizontal */
+}
+
+.fade-in.from-right {
+  transform: translateY(50px); /* usa translateY para não causar scrollbar horizontal */
+}
+
+.fade-in.from-bottom {
+  transform: translateY(50px);
+}
+
+.fade-in.scale {
+  transform: scale(0.8);
+}
+
+/* Quando o elemento aparece */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}

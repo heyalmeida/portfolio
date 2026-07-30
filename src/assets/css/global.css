@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #08080a;
+  --color-slate-900: #0c0c0e;
+  --color-slate-800: #141416;
+  --color-slate-700: #1f1f23;
+  --color-slate-600: #3f3f46;
+  --color-slate-500: #71717a;
+  --color-slate-400: #a1a1aa;
+
+  --color-indigo-950: rgba(37, 99, 235, 0.12);
+  --color-indigo-800: #1e40af;
+  --color-indigo-700: #1d4ed8;
+  --color-indigo-600: #2563eb;
+  --color-indigo-500: #3b82f6;
+  --color-indigo-400: #60a5fa;
+  --color-indigo-300: #93c5fd;
+
+  --color-violet-950: rgba(124, 58, 237, 0.12);
+  --color-violet-800: #5b21b6;
+  --color-violet-700: #6d28d9;
+  --color-violet-600: #7c3aed;
+  --color-violet-500: #8b5cf6;
+  --color-violet-400: #a78bfa;
+}
+
+/* =====================
+   RESET & BASE
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #08080a;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #08080a;
+}
+
+/* =====================
+   CURSOR CUSTOMIZADO
+   ===================== */
+html, body, * {
+  cursor: none !important;
+}
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: #3b82f6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, border-radius 0.2s ease, opacity 0.2s ease;
+}
+
+#cursor.cursor--hover {
+  width: 22px;
+  height: 22px;
+  background: rgba(59, 130, 246, 0.3);
+  border: 1.5px solid #3b82f6;
+}
+
+#cursor.cursor--text {
+  width: 2px;
+  height: 16px;
+  background: #3b82f6;
+  border-radius: 1px;
+}
+
+#cursor.cursor--title {
+  width: 3px;
+  height: 24px;
+  background: #2563eb;
+  border-radius: 1.5px;
+}
+
+#cursor.cursor--hidden {
+  opacity: 0;
+}
+
+/* =====================
+   KEYFRAMES
+   ===================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 400px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* =====================
+   UTILITÁRIOS GLOBAIS
+   ===================== */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in-up-1 { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.animate-fade-in-up-2 { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+.animate-fade-in-up-3 { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+.animate-fade-in-up-4 { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+.animate-fade-in-up-5 { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1f23;
+  border-radius: 3px;
+  border: 1px solid #08080a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta — Lojas M&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            orange: '#E8490F',
+            'orange-dark': '#C93D0C',
+            'orange-soft': '#FF5A1F',
+            bg: '#0A0A0A',
+            card: '#111111',
+            'card-2': '#161616',
+            border: '#1F1F1F',
+            muted: '#A3A3A3', /* Ajustado de #666666 para melhor contraste no tema escuro */
+            light: '#F0EDE8',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Outfit', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { background-color: #0A0A0A; color: #F0EDE8; font-family: 'Outfit', sans-serif; -webkit-font-smoothing: antialiased; }
+    .orange-line { background: linear-gradient(90deg, #E8490F, #FF5A1F, transparent); }
+    .card-glow { box-shadow: 0 0 0 1px #E8490F33, 0 20px 60px -10px #E8490F22; }
+    .divider { background: linear-gradient(90deg, transparent, #1F1F1F, transparent); height: 1px; }
+    .tag { display: inline-flex; align-items: center; gap: 6px; background: #E8490F18; border: 1px solid #E8490F44; color: #FF5A1F; border-radius: 99px; padding: 6px 14px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+    .feature-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1A1A1A; }
+    .feature-item:last-child { border-bottom: none; }
+    .feature-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .noise { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); }
+    .price-tag { font-family: 'Playfair Display', serif; }
+    @media print { body { background: white; color: black; } }
+  </style>
+</head>
+
+<body class="min-h-screen text-base">
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden pt-24 pb-16 px-8">
+    <div class="noise absolute inset-0 pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(#E8490F 1px, transparent 1px), linear-gradient(90deg, #E8490F 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <div class="relative max-w-4xl mx-auto">
+      <div class="flex items-center gap-3 mb-10">
+        <div class="orange-line h-px w-12"></div>
+        <span class="text-muted text-sm font-medium tracking-widest uppercase">Proposta Comercial · 2026</span>
+      </div>
+
+      <div class="mb-6">
+        <p class="text-muted text-sm tracking-widest uppercase mb-2 font-sans font-medium">Elaborado para</p>
+        <h1 class="font-serif text-6xl md:text-7xl font-bold tracking-tight">
+          <span class="text-light">LOJAS</span>
+          <span class="text-orange"> M&M</span>
+        </h1>
+        <p class="font-serif italic text-muted text-2xl mt-2">O Point da Moda</p>
+      </div>
+
+      <div class="divider my-8"></div>
+
+      <div class="max-w-2xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-light leading-snug mb-5">
+          Duas opções.<br/>
+          <span class="italic text-orange">Um objective: organizar e fazer crescer.</span>
+        </h2>
+        <p class="text-muted text-lg leading-relaxed font-sans font-normal">
+          Apresentamos duas propostas pensadas de acordo com a realidade da Lojas M&M. 
+          Uma delas coloca a loja no digital de ponta a ponta. A outra entrega controle 
+          total sobre o que já funciona hoje — sem complicar o que não precisa.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO CALLOUT -->
+  <section class="px-8 pb-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="border border-border rounded-2xl p-6 flex gap-5 items-start" style="background:#111;">
+        <div class="feature-icon bg-orange text-white text-base mt-0.5">
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
+        <div>
+          <p class="text-light font-semibold mb-2 text-base">Como funciona o pagamento</p>
+          <p class="text-muted text-base leading-relaxed font-normal">
+            Cada plano tem uma <strong class="text-light font-medium">taxa de setup</strong> paga uma única vez, que cobre o desenvolvimento e a entrega do sistema. 
+            A partir daí, uma <strong class="text-light font-medium">mensalidade</strong> cobre hospedagem, infraestrutura, suporte e manutenção — tudo incluso, sem surpresas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="px-8 pb-20">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+
+      <!-- PLANO COMPLETO -->
+      <div class="card-glow rounded-2xl overflow-hidden flex flex-col" style="background:#111;">
+        <div class="h-1 bg-gradient-to-r from-orange via-orange-soft to-transparent"></div>
+        <div class="p-8 flex flex-col flex-1">
+
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <div class="tag mb-4"><i class="fa-solid fa-star text-xs"></i> Recomendado</div>
+              <h3 class="font-serif text-3xl font-semibold text-light">Plano Completo</h3>
+              <p class="text-muted text-base mt-1 font-normal">Site + Sistema de Gestão</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-orange text-xl flex-shrink-0" style="background:#E8490F18; border:1px solid #E8490F33;">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+          </div>
+
+          <!-- pricing -->
+          <div class="rounded-xl p-5 mb-6" style="background:#0C0C0C; border:1px solid #1F1F1F;">
+            <div class="flex items-end gap-3 mb-3">
+              <div>
+                <p class="text-muted text-xs uppercase tracking-wider mb-1 font-medium">Setup (único)</p>
+                <p class="price-tag text-4xl font-bold text-light">R$ 2.500</p>
+              </div>
+            </div>
+            <div class="divider my-3"></div>
+            <div>
+              <p class="text-muted text-xs uppercase tracking-wider mb-1 font-medium">Mensalidade</p>
+              <p class="price-tag text-3xl font-semibold text-orange">R$ 650<span class="text-muted text-lg font-normal font-sans">/mês</span></p>
+            </div>
+          </div>
+
+          <!-- features -->
+          <div class="flex-1">
+            <p class="text-light text-sm uppercase tracking-widest mb-4 font-semibold">O que está incluso</p>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-solid fa-store"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Loja online completa</p>
+                <p class="text-muted text-sm font-normal mt-1">Catálogo público com produtos, filtros, buscas e coleções</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-solid fa-credit-card"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">MercadoPago integrado</p>
+                <p class="text-muted text-sm font-normal mt-1">Pix, cartão de crédito parcelado e Checkout Pro</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-solid fa-truck"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Frete via Correios</p>
+                <p class="text-muted text-sm font-normal mt-1">Cálculo automático por CEP + opção de retirada na loja</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Coleções com contagem regressiva</p>
+                <p class="text-muted text-sm font-normal mt-1">Radar de Coleções e proteção por senha no lançamento</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-solid fa-chart-line"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Dashboard de vendas</p>
+                <p class="text-muted text-sm font-normal mt-1">Faturamento, gráficos, pipeline de pedidos e relatórios</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Controle de estoque</p>
+                <p class="text-muted text-sm font-normal mt-1">Por produto, cor e tamanho — em tempo real</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Usuários com níveis de acesso</p>
+                <p class="text-muted text-sm font-normal mt-1">Admin, gerente e vendedor — cada um vê o que precisa</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-orange text-base" style="background:#E8490F18;"><i class="fa-brands fa-google"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Google Analytics integrado</p>
+                <p class="text-muted text-sm font-normal mt-1">Visitas, origem do tráfego e páginas mais acessadas</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PLANO GESTÃO -->
+      <div class="rounded-2xl overflow-hidden flex flex-col" style="background:#111; border:1px solid #1F1F1F;">
+        <div class="h-1" style="background:#1F1F1F;"></div>
+        <div class="p-8 flex flex-col flex-1">
+
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <div style="height:36px; margin-bottom:12px;"></div>
+              <h3 class="font-serif text-3xl font-semibold text-light">Plano Gestão</h3>
+              <p class="text-muted text-base mt-1 font-normal">Só o Sistema de Gerenciamento</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-muted text-xl flex-shrink-0" style="background:#1A1A1A; border:1px solid #252525;">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+          </div>
+
+          <!-- pricing -->
+          <div class="rounded-xl p-5 mb-6" style="background:#0C0C0C; border:1px solid #1F1F1F;">
+            <div class="flex items-end gap-3 mb-3">
+              <div>
+                <p class="text-muted text-xs uppercase tracking-wider mb-1 font-medium">Setup (único)</p>
+                <p class="price-tag text-4xl font-bold text-light">R$ 1.500</p>
+              </div>
+            </div>
+            <div class="divider my-3"></div>
+            <div>
+              <p class="text-muted text-xs uppercase tracking-wider mb-1 font-medium">Mensalidade</p>
+              <p class="price-tag text-3xl font-semibold text-light">R$ 380<span class="text-muted text-lg font-normal font-sans">/mês</span></p>
+            </div>
+          </div>
+
+          <!-- features -->
+          <div class="flex-1">
+            <p class="text-light text-sm uppercase tracking-widest mb-4 font-semibold">O que está incluso</p>
+
+            <div class="feature-item">
+              <div class="feature-icon text-light text-base" style="background:#1A1A1A;"><i class="fa-solid fa-chart-line"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Dashboard de vendas</p>
+                <p class="text-muted text-sm font-normal mt-1">Faturamento, gráficos, metas e relatórios por período</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-light text-base" style="background:#1A1A1A;"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Controle de estoque</p>
+                <p class="text-muted text-sm font-normal mt-1">Por produto, cor e tamanho — com alertas de reposição</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-light text-base" style="background:#1A1A1A;"><i class="fa-solid fa-cash-register"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Registro de vendas presenciais</p>
+                <p class="text-muted text-sm font-normal mt-1">PDV simples: produto, quantidade e forma de pagamento</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-light text-base" style="background:#1A1A1A;"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Usuários e vendedores</p>
+                <p class="text-muted text-sm font-normal mt-1">Múltiplos acessos com permissões por perfil</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-light text-base" style="background:#1A1A1A;"><i class="fa-solid fa-file-export"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Relatórios exportáveis</p>
+                <p class="text-muted text-sm font-normal mt-1">PDF e Excel com dados de venda e estoque por período</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon text-light text-base" style="background:#1A1A1A;"><i class="fa-solid fa-bell"></i></div>
+              <div>
+                <p class="text-light text-base font-medium">Notificações de novos pedidos</p>
+                <p class="text-muted text-sm font-normal mt-1">Alerta na área de trabalho assim que chegar um pedido</p>
+              </div>
+            </div>
+
+            <!-- not included -->
+            <div class="mt-6 pt-6 border-t border-border">
+              <p class="text-light text-xs uppercase tracking-widest mb-3 font-semibold">Não incluso</p>
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 text-muted text-sm font-normal">
+                  <i class="fa-solid fa-xmark text-orange opacity-40"></i> Loja online pública
+                </div>
+                <div class="flex items-center gap-2 text-muted text-sm font-normal">
+                  <i class="fa-solid fa-xmark text-orange opacity-40"></i> Checkout e pagamentos online
+                </div>
+                <div class="flex items-center gap-2 text-muted text-sm font-normal">
+                  <i class="fa-solid fa-xmark text-orange opacity-40"></i> Integração com Correios
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="px-8 pb-20">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="orange-line h-px w-8"></div>
+        <h2 class="font-serif text-3xl text-light">Comparativo entre os planos</h2>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden" style="border:1px solid #1F1F1F;">
+        <table class="w-full text-base">
+          <thead>
+            <tr style="background:#141414; border-bottom:1px solid #1F1F1F;">
+              <th class="text-left p-5 text-light font-semibold text-sm uppercase tracking-wider w-1/2">Funcionalidade</th>
+              <th class="p-5 text-center text-sm uppercase tracking-wider font-semibold" style="color:#FF5A1F;">Completo</th>
+              <th class="p-5 text-center text-muted text-sm uppercase tracking-wider font-semibold">Gestão</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Loja online pública</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-border text-lg"><i class="fa-solid fa-circle-xmark"></i></td>
+            </tr>
+            <tr style="background:#0D0D0D; border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Checkout com MercadoPago</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-border text-lg"><i class="fa-solid fa-circle-xmark"></i></td>
+            </tr>
+            <tr style="border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Cálculo de frete via Correios</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-border text-lg"><i class="fa-solid fa-circle-xmark"></i></td>
+            </tr>
+            <tr style="background:#0D0D0D; border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Coleções com contagem regressiva</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-border text-lg"><i class="fa-solid fa-circle-xmark"></i></td>
+            </tr>
+            <tr style="border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Dashboard de vendas e faturamento</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr style="background:#0D0D0D; border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Controle de estoque por cor/tamanho</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr style="border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Registro de vendas presenciais (PDV)</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr style="background:#0D0D0D; border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Usuários com níveis de acesso</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr style="border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Relatórios exportáveis</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr style="background:#0D0D0D; border-bottom:1px solid #141414;">
+              <td class="p-5 text-light font-normal">Notificações de novos pedidos</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td class="p-5 text-light font-normal">Google Analytics integrado</td>
+              <td class="p-5 text-center text-orange text-lg"><i class="fa-solid fa-circle-check"></i></td>
+              <td class="p-5 text-center text-border text-lg"><i class="fa-solid fa-circle-xmark"></i></td>
+            </tr>
+          </tbody>
+          <!-- pricing footer -->
+          <tfoot>
+            <tr style="background:#141414; border-top:1px solid #1F1F1F;">
+              <td class="p-5 text-muted text-sm uppercase tracking-wider font-medium">Setup · Mensalidade</td>
+              <td class="p-5 text-center">
+                <p class="font-serif font-bold text-light text-xl">R$ 2.500</p>
+                <p class="text-orange text-sm mt-0.5 font-semibold">+ R$ 650/mês</p>
+              </td>
+              <td class="p-5 text-center">
+                <p class="font-serif font-bold text-light text-xl">R$ 1.500</p>
+                <p class="text-muted text-sm mt-0.5 font-semibold">+ R$ 380/mês</p>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S ALWAYS INCLUDED -->
+  <section class="px-8 pb-20">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="orange-line h-px w-8"></div>
+        <h2 class="font-serif text-3xl text-light">O que a mensalidade cobre em ambos os planos</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl p-5" style="background:#111; border:1px solid #1F1F1F;">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-orange mb-4" style="background:#E8490F18;">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <p class="text-light font-semibold text-base mb-2">Hospedagem e infraestrutura</p>
+          <p class="text-muted text-sm font-normal leading-relaxed">Servidor, domínio e toda a estrutura técnica para o sistema funcionar sem interrupções.</p>
+        </div>
+
+        <div class="rounded-xl p-5" style="background:#111; border:1px solid #1F1F1F;">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-orange mb-4" style="background:#E8490F18;">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <p class="text-light font-semibold text-base mb-2">Suporte técnico</p>
+          <p class="text-muted text-sm font-normal leading-relaxed">Atendimento para dúvidas, erros e orientações sobre o uso do sistema.</p>
+        </div>
+
+        <div class="rounded-xl p-5" style="background:#111; border:1px solid #1F1F1F;">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-orange mb-4" style="background:#E8490F18;">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <p class="text-light font-semibold text-base mb-2">Manutenção e correções</p>
+          <p class="text-muted text-sm font-normal leading-relaxed">Bugs corrigidos sem custo adicional. O sistema evolui sem você precisar pagar a mais por isso.</p>
+        </div>
+      </div>
+
+      <!-- extra note -->
+      <div class="mt-6 rounded-xl p-5 flex gap-4 items-start" style="background:#111; border:1px solid #1F1F1F;">
+        <i class="fa-solid fa-triangle-exclamation text-orange opacity-70 text-base mt-0.5"></i>
+        <p class="text-muted text-sm font-normal leading-relaxed">
+          <strong class="text-light font-semibold">Funcionalidades novas</strong> — não incluídas originalmente no escopo contratado — são orçadas separadamente antes de qualquer desenvolvimento. Nenhuma surpresa no final do mês.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-8 pb-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="divider mb-10"></div>
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <p class="text-muted text-xs uppercase tracking-widest mb-2 font-medium">Desenvolvido por</p>
+          <p class="font-serif text-2xl text-light font-semibold">Pedro Almeida</p>
+          <a href="https://studio.arctisdev.com" class="text-orange text-base font-normal hover:underline">studio.arctisdev.com</a>
+        </div>
+        <div class="text-left">
+          <p class="text-muted text-sm mb-4 font-normal">Esta proposta é válida por 30 dias.</p>
+          <div class="flex gap-3 justify-end">
+            <span class="tag"><i class="fa-brands fa-github text-xs"></i> GitHub Webhooks</span>
+            <span class="tag"><i class="fa-brands fa-golang text-xs"></i> Go</span>
+            <span class="tag"><i class="fa-solid fa-database text-xs"></i> MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
