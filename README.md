@@ -1,6 +1,6 @@
 # Pedro Miguel — Portfolio (ArctisDev)
 
-> Portfólio pessoal de engenharia backend e DevOps. Construído para mostrar sistemas reais em produção, não demos.
+> Meu portfólio pessoal de engenharia backend e DevOps. Construído para mostrar sistemas reais em produção.
 
 **Live:** [heyalmeida.vercel.app](https://heyalmeida.vercel.app/)
 
