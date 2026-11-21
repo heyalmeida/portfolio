@@ -24,13 +24,13 @@ export default defineConfig(({ mode }) => {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       },
     },
-    preview: {
-      port: port,
-      allowedHosts: ['studio.arctisdev.com', 'heyalmeida.luarvia.dev'],
-    },
-    server: {
-      port: port,
-      allowedHosts: ['studio.arctisdev.com', 'heyalmeida.luarvia.dev'],
-    }
+preview: {
+  port: port,
+  allowedHosts: ['studio.arctisdev.com', 'heyalmeida.luarvia.dev', 'portfolio.luarvia.dev'],
+},
+server: {
+  port: port,
+  allowedHosts: ['studio.arctisdev.com', 'heyalmeida.luarvia.dev', 'portfolio.luarvia.dev'],
+}
   }
 })
