@@ -26,11 +26,11 @@ export default defineConfig(({ mode }) => {
     },
     preview: {
       port: port,
-      allowedHosts: ['studio.arctisdev.com'],
+      allowedHosts: ['studio.arctisdev.com', 'heyalmeida.luarvia.dev'],
     },
     server: {
       port: port,
-      allowedHosts: ['studio.arctisdev.com'],
+      allowedHosts: ['studio.arctisdev.com', 'heyalmeida.luarvia.dev'],
     }
   }
 })
